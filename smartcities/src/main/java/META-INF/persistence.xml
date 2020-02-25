@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="smartcities">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>br.com.pompeo.entity.Produto</class>
+		<class>br.com.pompeo.entity.Fornecedor</class>
+		<properties>
+			<!-- diz se voce vai mostrar o sql que o framework ta mandando
+			para o bando de dados -->
+			<property name="hibernate.show_sql" value="true"/>
+			<!-- hibarte vai pode criar tabelas,sequence, chaves compostas,  mas ele dropa e cria novamente  -->
+			<property name="hibernate.hbm2ddl.auto" value="create"/>
+			<!-- pra mostrar o sql formatado -->
+			<property name="hibernate.format_sql" value = "true"/>
+			<!--  traduz o que voce escreve para o banco que vc esta trabalhando -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
+			<!-- dados para conexao -->
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+			<property name="javax.persistence.jdbc.user" value="RM82304"/>
+			<property name="javax.persistence.jdbc.password" value="230492"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl"/>
+		</properties>
+	</persistence-unit>
+</persistence>
